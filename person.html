@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gym Dashboard - Persons</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index2.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="#" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Gym Dashboard</span>
+    </a>
+
+    <div class="sidebar">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Alexander Pierce</a>
+        </div>
+      </div>
+
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="index2.html" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="classes.html" class="nav-link">
+              <i class="nav-icon fas fa-calendar"></i>
+              <p>Classes</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="persons.html" class="nav-link active">
+              <i class="nav-icon fas fa-user"></i>
+              <p>Persons</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="content-wrapper">
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Persons</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="index2.html">Home</a></li>
+              <li class="breadcrumb-item active">Persons</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Info boxes -->
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Table for persons -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Person List</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Names</th>
+                      <th>Surname</th>
+                      <th>Second Surname</th>
+                      <th>CI</th>
+                      <th>Birthdate</th>
+                      <th>Gender</th>
+                      <th>Status</th>
+                      <th>Register Date</th>
+                      <th>Last Update</th>
+                      <th>User ID</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="personList">
+                    <!-- Persons will be dynamically added here -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Add person form -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add New Person</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form id="addPersonForm">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="personNames">Names</label>
+                    <input type="text" class="form-control" id="personNames" placeholder="Enter names">
+                  </div>
+                  <div class="form-group">
+                    <label for="personSurname">Surname</label>
+                    <input type="text" class="form-control" id="personSurname" placeholder="Enter surname">
+                  </div>
+                  <div class="form-group">
+                    <label for="personSecondSurname">Second Surname</label>
+                    <input type="text" class="form-control" id="personSecondSurname" placeholder="Enter second surname">
+                  </div>
+                  <div class="form-group">
+                    <label for="personCI">CI</label>
+                    <input type="text" class="form-control" id="personCI" placeholder="Enter CI">
+                  </div>
+                  <div class="form-group">
+                    <label for="personBirthdate">Birthdate</label>
+                    <input type="date" class="form-control" id="personBirthdate" placeholder="Enter birthdate">
+                  </div>
+                  <div class="form-group">
+                    <label for="personGender">Gender</label>
+                    <input type="text" class="form-control" id="personGender" placeholder="Enter gender">
+                  </div>
+                  <div class="form-group">
+                    <label for="personStatus">Status</label>
+                    <input type="text" class="form-control" id="personStatus" placeholder="Enter status">
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Add Person</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="plugins/raphael/raphael.min.js"></script>
+<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard2.js"></script>
+
+<!-- Custom Script -->
+<script>
+$(document).ready(function() {
+    // Load persons
+    $.ajax({
+        url: 'get_persons.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(persons) {
+            var personList = $('#personList');
+            persons.forEach(function(person) {
+                var row = `<tr>
+                            <td>${person.id}</td>
+                            <td>${person.names}</td>
+                            <td>${person.surname}</td>
+                            <td>${person.secondSurname}</td>
+                            <td>${person.ci}</td>
+                            <td>${person.birthdate}</td>
+                            <td>${person.gender}</td>
+                            <td>${person.status}</td>
+                            <td>${person.registerDate}</td>
+                            <td>${person.lastUpdate}</td>
+                            <td>${person.userId}</td>
+                            <td><button class="btn btn-primary btn-sm">Edit</button></td>
+                           </tr>`;
+                personList.append(row);
+            });
+        },
+        error: function(error) {
+            console.log('Error fetching data:', error);
+        }
+    });
+
+    // Add person
+    $('#addPersonForm').submit(function(e) {
+        e.preventDefault();
+
+        var personNames = $('#personNames').val();
+        var personSurname = $('#personSurname').val();
+        var personSecondSurname = $('#personSecondSurname').val();
+        var personCI = $('#personCI').val();
+        var personBirthdate = $('#personBirthdate').val();
+        var personGender = $('#personGender').val();
+        var personStatus = $('#personStatus').val();
+
+        $.ajax({
+            url: 'add_person.php',
+            type: 'POST',
+            data: {
+                names: personNames,
+                surname: personSurname,
+                secondSurname: personSecondSurname,
+                ci: personCI,
+                birthdate: personBirthdate,
+                gender: personGender,
+                status: personStatus
+            },
+            success: function(response) {
+                alert('Person added successfully');
+                location.reload();
+            },
+            error: function(error) {
+                console.log('Error adding person:', error);
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
